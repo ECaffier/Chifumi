@@ -27,5 +27,5 @@ function whowin(){
     }
 }
 whowin();
-
+//message de fin
 alert("Pour une autre partie, faites f5 !")
