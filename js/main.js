@@ -13,17 +13,17 @@ var cptrandom = Math.floor(Math.random() * pfc.length);
 //je stock le choix de l'ordinateur dans une variable
 var cptchoice=(cptrandom, pfc[cptrandom]);
 // j'affiche les résultats
-alert ("Lordinateur a choisis " + cptchoice + " Vous avez choisis " + choice);
+alert ("L'ordinateur a choisis " + cptchoice + " et vous avez choisis " + choice + ".");
 //fonction pour décider qui gagne
 function whowin(){
     if( cptchoice === choice){
-        alert("Draw");
+        alert("Egalité.");
     }
     else if (cptchoice === "pierre" && choice === "ciseau" || cptchoice === "feuille" && choice === "pierre" || cptchoice === "ciseaux" && choice === "feuille"){
-        alert("You lose");
+        alert("Vous avez perdu.");
     }
     else{
-        alert ("You win");
+        alert ("Vous avez gagné !");
     }
 }
 whowin();
