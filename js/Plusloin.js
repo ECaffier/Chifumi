@@ -1,18 +1,34 @@
-// Message de bienvenue
-alert("Bienvenue sur le site du Shifumi !");
-//Demande le nom et le stock dans la variable name
-var name = prompt("Si vous souhaitez jouer, rentrez votre nom");
-//Utilise la variable name pour demander si le joueur est pret.
-alert ("Es tu prêt  " + name + "?");
 
+//Demande le nom et le stock dans la variable name
 var cptPoints =0;
 var userPoints =0;
 var playAgain ="";
+var choice ="";
+
+// Function that ask for the name and chain while namelenght < 2 & >20.
+function askName(){
+    var name = prompt("Si vous souhaitez jouer, rentrez votre nom");
+        while (name.length < 2 || name.length > 20){
+            name = prompt("Veuillez rentrer un nom correct (< 20 et > 2)");
+
+        };
+    //Utilise la variable name pour demander si le joueur est pret.
+    alert ("Es tu prêt  " + name + "?");
+};
 
 function playGame(){
 
-//Demande le choix du joueur et le stock dans la variable choice
-var choice= prompt("Choisis pierre, feuille ou ciseaux.");
+//Demande le choix du joueur et le stock dans la variable choice, vérifie que le choix soit pierre feuille ou ciseau
+    function verifChoice (){ 
+       var choice = prompt("Choisis pierre, feuille ou ciseaux.");
+        
+        while (choice != "pierre" && choice != "feuille" && choice != "ciseaux"){
+            var choice = prompt("Veuillez ecrire pierre feuille ou ciseaux correctement.");
+        }
+        return choice;
+    };
+
+var choice = verifChoice();
 //je crée une constant pierre feuille ciseaux car ils ne bougeront pas.
 const pfc=["pierre", "feuille", "ciseaux"];
 //je permet à l'ordinateur de random dans ma constant PFC
@@ -52,7 +68,11 @@ function anotherOne (){
             alert("Merci d'avoir joué !");
         } 
 };
+// the game :
 
+// Message de bienvenue
+alert("Bienvenue sur le site du Shifumi !");
+askName();
 while (cptPoints !=3 && userPoints !=3){
     playGame();
 
